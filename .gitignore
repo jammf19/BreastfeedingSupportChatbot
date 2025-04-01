@@ -1,0 +1,20 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore environment files
+.env
+*.env
+
+# Ignore Hugging Face model cache
+~/.cache/huggingface/
+#Ignore VSCode/PyCharm files
+.vscode/
+.idea/
+
+# Ignore other sensitive files
+credentials.json
+secret.json
