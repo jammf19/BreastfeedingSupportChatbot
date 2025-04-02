@@ -28,6 +28,14 @@ Below is the data structure for **preprocessed_lll_data.csv**
 | **Source** | The web address (link) where the article can be accessed. |
 | **Title** | The title of the breastfeeding article. |
 
+**Other Files**
+**webscraping.ipynb** notebook showing how I extracted data from the website
+**combining data.ipynb** notebook showing how I combined dataframes for each webpage into one
+**pre_processing.ipynb** notebook showing how I organised the data into paragraph chunks
+**initial_transformer.ipynb** notebook of first chatbot
+**final_transformer.ipynb** notebook of enhanced chatbot
+**CLI_source_code.py** final chatbot code for CLI
+
 ### **Project Steps**
 
 1. **Data Collection & Preprocessing**
@@ -62,6 +70,7 @@ Below is the data structure for **preprocessed_lll_data.csv**
 - **Pandas, global & os :** For combining and preprocessing
 - **Hugging Face Transformers**
 - **Scikit-learn, numpy, pytorch & sentence transformers**
+
 
 **Future Directions**
 
