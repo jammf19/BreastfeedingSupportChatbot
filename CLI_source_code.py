@@ -54,7 +54,6 @@ class LaLecheLeagueChatbot:
             model="facebook/bart-large-cnn",
             max_length=150,
             min_length=40,
-            use_auth_token=True
         )
         
         # 4. Intent classification for detecting query types
@@ -177,9 +176,8 @@ class LaLecheLeagueChatbot:
             summary = self.summarizer(text)
             return summary[0]['summary_text']
         except Exception as e:
-            # Fallback to original text if summarization fails
-            return text
-    
+            return "I'm sorry, I don't have a good answer for that."
+        
     def get_response(self, user_input):
         """Enhanced main method to interact with the chatbot"""
         # Get the answer using the retrieval-based approach
@@ -200,9 +198,11 @@ class LaLecheLeagueChatbot:
         related_content = self.find_relevant_content(result['title'], top_k=2)
         if related_content and len(related_content) > 1:
             related_titles = set([content['title'] for content in related_content 
-                               if content['title'] != result['title']])
+                       if content['title'] != result['title']])
+            related_sources = set([content['source'] for content in related_content 
+                       if content['title'] != result['title']])
             if related_titles:
-                response += f"\n\nYou might also be interested in: {', '.join(related_titles)} \n\nsource: {related_content[0]['source']}"
+                response += f"\n\nYou might also be interested in: {', '.join(related_titles)}'\n Source: {', '.join(related_sources)}"
         
         return response
 
